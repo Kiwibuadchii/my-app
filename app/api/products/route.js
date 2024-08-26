@@ -20,7 +20,7 @@ export async function POST(request) {
         })
     return NextResponse.json({message:"Product created successfully"},{status:200})
 }
-export async function GET(req, res, next) {
+export async function GET() {
     await connectMongoDB();
     const products = await Product.find({});
     return NextResponse.json(products,{status:200})
